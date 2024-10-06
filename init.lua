@@ -232,6 +232,7 @@ require("lazy").setup({
 	-- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
 	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
 
+	"nvim-java/nvim-java",
 	-- NOTE: Plugins can also be added by using a table,
 	-- with the first argument being the link and the following
 	-- keys can be used to configure plugin behavior/loading/etc.
@@ -711,10 +712,10 @@ require("lazy").setup({
 			formatters_by_ft = {
 				lua = { "stylua" },
 				-- Conform can also run multiple formatters sequentially
-				-- python = { "isort", "black" },
+				python = { "isort", "black" },
 				--
 				-- You can use 'stop_after_first' to run the first available formatter from the list
-				-- javascript = { "prettierd", "prettier", stop_after_first = true },
+				javascript = { "prettierd", "prettier", stop_after_first = true },
 			},
 		},
 	},
@@ -981,6 +982,23 @@ require("lazy").setup({
 		},
 	},
 })
+require("java").setup()
+require("lspconfig").jdtls.setup({
+	settings = {
+		java = {
+			configuration = {
+				runtimes = {
+					{
+						name = "JavaSE-21",
+						path = "/opt/jdk-21.0.4+7",
+						default = true,
+					},
+				},
+			},
+		},
+	},
+})
 
+-- My
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
