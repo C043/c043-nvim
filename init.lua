@@ -102,6 +102,7 @@ vim.g.have_nerd_font = false
 vim.opt.colorcolumn = "80"
 vim.opt.textwidth = 80
 vim.opt.columns = 120
+vim.opt.breakat = " "
 vim.opt.linebreak = true
 
 -- Make line numbers default
