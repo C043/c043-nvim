@@ -99,6 +99,11 @@ vim.g.have_nerd_font = false
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
+vim.opt.colorcolumn = "80"
+vim.opt.textwidth = 80
+vim.opt.columns = 120
+vim.opt.linebreak = true
+
 -- Make line numbers default
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
@@ -234,6 +239,7 @@ require("lazy").setup({
 
 	"nvim-java/nvim-java",
 	"windwp/nvim-ts-autotag",
+
 	-- NOTE: Plugins can also be added by using a table,
 	-- with the first argument being the link and the following
 	-- keys can be used to configure plugin behavior/loading/etc.
@@ -1004,6 +1010,7 @@ require("lspconfig").jdtls.setup({
 		},
 	},
 })
+
 require("nvim-ts-autotag").setup({
 	opts = {
 		-- Defaults
