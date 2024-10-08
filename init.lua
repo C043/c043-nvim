@@ -1011,6 +1011,9 @@ require("lazy").setup({
 		},
 	},
 })
+
+-- NOTE: Plugin configs
+
 require("java").setup()
 require("lspconfig").jdtls.setup({
 	settings = {
