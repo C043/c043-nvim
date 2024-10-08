@@ -872,6 +872,8 @@ require("lazy").setup({
 			vim.cmd.colorscheme("sonokai")
 			vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 			vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+			vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "none" })
+			vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { bg = "none" })
 
 			-- You can configure highlights by doing something like:
 			vim.cmd.hi("Comment gui=none")
@@ -1240,6 +1242,7 @@ NoNeckPain.bufferOptions = {
 }
 
 NoNeckPain.bufferOptionsWo = {
+	fillchars = "eob: ",
 	--- @type boolean
 	cursorline = false,
 	--- @type boolean
@@ -1262,15 +1265,7 @@ NoNeckPain.bufferOptionsWo = {
 
 NoNeckPain.bufferOptionsBo = {
 	--- @type string
-	filetype = "no-neck-pain",
-	--- @type string
-	buftype = "nofile",
-	--- @type string
-	bufhidden = "hide",
-	--- @type boolean
-	buflisted = false,
-	--- @type boolean
-	swapfile = false,
+	filetype = "md",
 }
 
 --- NoNeckPain's scratchPad buffer options.
@@ -1290,7 +1285,7 @@ NoNeckPain.bufferOptionsScratchPad = {
 	-- The path to the file to save the scratchPad content to and load it in the buffer.
 	--- @type string?
 	--- @example: `~/notes.norg`
-	pathToFile = "~/notes.norg",
+	pathToFile = "~/nvim-Notes/",
 }
 
 NoNeckPain.bufferOptionsColors = {
