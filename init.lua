@@ -248,6 +248,8 @@ require("lazy").setup({
 	---@type ibl.config
 	opts = {},
 
+	"ThePrimeagen/vim-be-good",
+
 	{
 		"shortcuts/no-neck-pain.nvim",
 		version = "*",
