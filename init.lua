@@ -259,6 +259,7 @@ require("lazy").setup({
 		"shortcuts/no-neck-pain.nvim",
 		version = "*",
 	},
+	"mbbill/undotree",
 
 	-- lazy.nvim:
 	-- NOTE: Plugins can also be added by using a table,
