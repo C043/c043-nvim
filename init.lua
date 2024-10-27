@@ -725,7 +725,6 @@ require("lazy").setup({
 				"stylua", -- Used to format Lua code
 				"pyright",
 				"eslint",
-				"jdtls",
 				"cssls",
 				"html",
 			})
