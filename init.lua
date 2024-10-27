@@ -243,8 +243,6 @@ require("lazy").setup({
 	-- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
 	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
 
-	"nvim-java/nvim-java",
-
 	"windwp/nvim-ts-autotag",
 
 	"lukas-reineke/indent-blankline.nvim",
@@ -1061,23 +1059,6 @@ require("lazy").setup({
 })
 
 -- NOTE: Plugin configs
-
-require("java").setup()
-require("lspconfig").jdtls.setup({
-	settings = {
-		java = {
-			configuration = {
-				runtimes = {
-					{
-						name = "JavaSE-21",
-						path = "/opt/jdk-21.0.4+7",
-						default = true,
-					},
-				},
-			},
-		},
-	},
-})
 
 require("nvim-ts-autotag").setup({
 	opts = {
