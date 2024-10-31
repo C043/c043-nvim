@@ -1,5 +1,5 @@
 # C043 - NVIM
-This is my personal neovim configuration, I started with [Kickstart](https://github.com/nvim-lua/kickstart.nvim) and then I tweaked things as I like them. It' a forever WIP as it changes with me.
+This is my personal neovim configuration, I started with [Kickstart](https://github.com/nvim-lua/kickstart.nvim) and then I tweaked things as I liked them. It's a forever WIP as it changes with me.
 
 ## How to use
 1. Clone the repository in ~/.config
