@@ -800,7 +800,7 @@ require("lazy").setup({
 				"bashls",
 				"ast_grep",
 				"ts_ls",
-				"tailwind",
+				"tailwindcss",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
