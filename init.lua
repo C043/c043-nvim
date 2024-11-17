@@ -328,18 +328,6 @@ require("lazy").setup({
 	},
 
 	{
-		"luckasRanarison/tailwind-tools.nvim",
-		name = "tailwind-tools",
-		build = ":UpdateRemotePlugins",
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter",
-			"nvim-telescope/telescope.nvim", -- optional
-			"neovim/nvim-lspconfig", -- optional
-		},
-		opts = {}, -- your configuration
-	},
-
-	{
 		"MeanderingProgrammer/render-markdown.nvim",
 		dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
 		-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
@@ -812,6 +800,7 @@ require("lazy").setup({
 				"bashls",
 				"ast_grep",
 				"ts_ls",
+				"tailwind",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
