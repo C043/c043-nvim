@@ -209,7 +209,7 @@ vim.keymap.set("i", '"', '""<Left>')
 vim.keymap.set("i", "'", "''<Left>")
 vim.keymap.set("i", "(", "()<Left>")
 vim.keymap.set("i", "[", "[]<Left>")
-vim.keymap.set("i", "{", "{}<Left><Enter><Esc>O")
+vim.keymap.set("i", "{", "{}<Left>")
 
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
@@ -313,6 +313,25 @@ require("lazy").setup({
 	opts = {},
 
 	"ThePrimeagen/vim-be-good",
+
+	{
+		"kawre/leetcode.nvim",
+		build = ":TSUpdate html",
+		dependencies = {
+			"nvim-telescope/telescope.nvim",
+			"nvim-lua/plenary.nvim", -- required by telescope
+			"MunifTanjim/nui.nvim",
+
+			-- optional
+			"nvim-treesitter/nvim-treesitter",
+			"rcarriga/nvim-notify",
+			"nvim-tree/nvim-web-devicons",
+		},
+		opts = {
+			-- configuration goes here
+			lang = "javascript",
+		},
+	},
 
 	-- tailwind-tools.lua
 	{
