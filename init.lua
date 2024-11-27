@@ -315,6 +315,17 @@ require("lazy").setup({
 	"ThePrimeagen/vim-be-good",
 
 	{
+		"derektata/lorem.nvim",
+		config = function()
+			require("lorem").opts({
+				sentenceLength = "medium",
+				comma_chance = 0.2,
+				max_commas_per_sentence = 2,
+			})
+		end,
+	},
+
+	{
 		"kawre/leetcode.nvim",
 		build = ":TSUpdate html",
 		dependencies = {
