@@ -849,6 +849,7 @@ require("lazy").setup({
 				"ast_grep",
 				"ts_ls",
 				"tailwindcss",
+				"emmet-language-server",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
@@ -1195,7 +1196,7 @@ require("nvim-ts-autotag").setup({
 	-- doesn't work well in a specific filetype
 	per_filetype = {
 		["html"] = {
-			enable_close = false,
+			enable_close = true,
 		},
 	},
 })
