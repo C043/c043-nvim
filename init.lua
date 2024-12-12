@@ -372,7 +372,11 @@ require("lazy").setup({
 			"nvim-telescope/telescope.nvim", -- optional
 			"neovim/nvim-lspconfig", -- optional
 		},
-		opts = {}, -- your configuration
+		opts = {
+			extensions = {
+				queries = { "ejs" },
+			},
+		}, -- your configuration
 	},
 
 	{
