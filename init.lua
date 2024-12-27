@@ -315,6 +315,15 @@ require("lazy").setup({
 	"ThePrimeagen/vim-be-good",
 
 	{
+		"anurag3301/nvim-platformio.lua",
+		dependencies = {
+			{ "akinsho/nvim-toggleterm.lua" },
+			{ "nvim-telescope/telescope.nvim" },
+			{ "nvim-lua/plenary.nvim" },
+		},
+	},
+
+	{
 		"smoka7/multicursors.nvim",
 		event = "VeryLazy",
 		dependencies = {
@@ -867,6 +876,11 @@ require("lazy").setup({
 						-- certain features of an LSP (for example, turning off formatting for ts_ls)
 						server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
 						require("lspconfig")[server_name].setup(server)
+
+						require("platformio").setup({
+							lsp = "clangd", --default: ccls, other option: clangd
+							-- If you pick clangd, it also creates compile_commands.json
+						})
 					end,
 				},
 			})
@@ -893,7 +907,7 @@ require("lazy").setup({
 				-- Disable "format_on_save lsp_fallback" for languages that don't
 				-- have a well standardized coding style. You can add additional
 				-- languages here or re-enable it for the disabled ones.
-				local disable_filetypes = { c = true, cpp = true }
+				local disable_filetypes = { c = false, cpp = false }
 				local lsp_format_opt
 				if disable_filetypes[vim.bo[bufnr].filetype] then
 					lsp_format_opt = "never"
