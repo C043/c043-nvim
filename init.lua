@@ -853,6 +853,7 @@ require("lazy").setup({
 				"ts_ls",
 				"tailwindcss",
 				"emmet-language-server",
+				"arduino_language_server",
 				"clangd",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
