@@ -27,11 +27,13 @@ require("lazy").setup({
 
 	"windwp/nvim-ts-autotag",
 
-	"lukas-reineke/indent-blankline.nvim",
-	main = "ibl",
-	---@module "ibl"
-	---@type ibl.config
-	opts = {},
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
+		---@module "ibl"
+		---@type ibl.config
+		opts = {},
+	},
 
 	"ThePrimeagen/vim-be-good",
 
