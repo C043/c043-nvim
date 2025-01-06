@@ -1,4 +1,3 @@
-local utils = require("utils")
 return {
 	{
 		-- Main LSP Configuration
@@ -141,19 +140,6 @@ return {
 						map("<leader>th", function()
 							vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
 						end, "[T]oggle Inlay [H]ints")
-					end
-				end,
-			})
-
-			vim.api.nvim_create_autocmd("BufEnter", {
-				pattern = "*",
-				callback = function()
-					local fileName = vim.api.nvim_buf_get_name(0)
-					local filetype = vim.bo.filetype
-					if filetype == "javascript" then
-						vim.keymap.set("n", "<leader>rr", function()
-							utils.TerminalOut("node " .. fileName)
-						end)
 					end
 				end,
 			})
