@@ -22,7 +22,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
 		if filetype == "javascript" then
 			vim.keymap.set("n", "<leader>rr", function()
 				utils.TerminalOut("node " .. fileName)
-			end)
+			end, { desc = "Execute the current buffer script" })
 		end
 	end,
 })
