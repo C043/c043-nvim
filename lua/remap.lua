@@ -35,7 +35,7 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 
 -- Auto close
 vim.keymap.set("i", '"', '""<Left>')
-vim.keymap.set("i", "'", "''<Left>")
+-- vim.keymap.set("i", "'", "''<Left>")
 vim.keymap.set("i", "(", "()<Left>")
 vim.keymap.set("i", "[", "[]<Left>")
 vim.keymap.set("i", "{", "{}<Left>")
