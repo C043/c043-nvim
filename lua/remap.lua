@@ -78,7 +78,14 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 vim.keymap.set("n", "<leader>tt", "<cmd>terminal<cr>", { desc = "Open Terminal Buffer" })
-vim.keymap.set("n", "<leader>t", "<cmd>NvimTreeToggle<cr>", { desc = "Open FileTree" })
+vim.keymap.set("n", "<leader>t", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle FileTree" })
+vim.keymap.set(
+	"n",
+	"<leader>co",
+	"<cmd>NvimTreeCollapseKeepBuffers<cr>",
+	{ desc = "FileTree Collapse Keeping Buffers" }
+)
+vim.keymap.set("n", "<leader>ll", "<cmd>NvimTreeCollapse<cr>", { desc = "FileTree Collapse" })
 
 -- TIP: Disable arrow keys in normal mode
 -- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
