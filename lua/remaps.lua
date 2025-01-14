@@ -3,6 +3,7 @@
 
 -- Normal Mode
 vim.keymap.set("n", "<C-s>", "<cmd>write<cr>", { desc = "Save file" })
+vim.keymap.set("n", "<C-q>", "<cmd>quit<cr>", { desc = "Quit NeoVim" })
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
@@ -37,7 +38,7 @@ vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" }
 
 vim.keymap.set("n", "<leader>tt", "<cmd>terminal<cr>", { desc = "Open Terminal Buffer" })
 
-vim.keymap.set("n", "<leader>t", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle FileTree" })
+vim.keymap.set("n", "<leader>t", "<cmd>NvimTreeFindFileToggle<cr>", { desc = "Toggle FileTree" })
 vim.keymap.set(
 	"n",
 	"<leader>co",
