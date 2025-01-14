@@ -86,6 +86,7 @@ vim.keymap.set(
 	{ desc = "FileTree Collapse Keeping Buffers" }
 )
 vim.keymap.set("n", "<leader>ll", "<cmd>NvimTreeCollapse<cr>", { desc = "FileTree Collapse" })
+vim.keymap.set("n", "<C-s>", "<cmd>write<cr>", { desc = "Save file" })
 
 -- TIP: Disable arrow keys in normal mode
 -- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
