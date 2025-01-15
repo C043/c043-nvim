@@ -7,18 +7,17 @@ return {
 				theme = "hyper",
 				config = {
 					shortcut = {
-						{ desc = "󰊳 Update", group = "@property", action = "Lazy update", key = "u" },
-						{ desc = "Plugins", group = "@property", action = "Lazy", key = "l" },
+						{ desc = "󰚰 Update", group = "@property", action = "Lazy update", key = "u" },
+						{ desc = " Plugins", group = "@property", action = "Lazy", key = "p" },
 						{
-							icon = " ",
 							icon_hl = "@variable",
-							desc = "Files",
+							desc = "󰭎 Files",
 							group = "Label",
 							action = "Telescope find_files",
 							key = "f",
 						},
 						{
-							desc = " Mason",
+							desc = "  Mason",
 							group = "DiagnosticHint",
 							action = "Mason",
 							key = "m",
