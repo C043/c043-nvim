@@ -2,8 +2,6 @@
 --  See `:help vim.keymap.set()`
 
 -- Normal Mode
-vim.keymap.set("n", "<C-s>", "<cmd>write<cr>", { desc = "Save file" })
-vim.keymap.set("n", "<C-q>", "<cmd>quit<cr>", { desc = "Quit NeoVim" })
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
