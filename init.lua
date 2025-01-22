@@ -4,6 +4,7 @@ require("autocommands")
 require("lazyPackageManager")
 
 -- NOTE: Plugin configs
+require("pluginConfigs.harpoonConfig")
 require("pluginConfigs.autotagConfig")
 require("pluginConfigs.blanklineConfig")
 require("pluginConfigs.nvimTreeConfig")
