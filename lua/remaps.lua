@@ -55,6 +55,12 @@ vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right win
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
+vim.keymap.set("n", "<leader>1", "<Cmd>BufferGoto 1<CR>")
+vim.keymap.set("n", "<leader>2", "<Cmd>BufferGoto 2<CR>")
+vim.keymap.set("n", "<leader>3", "<Cmd>BufferGoto 3<CR>")
+vim.keymap.set("n", "<leader>4", "<Cmd>BufferGoto 4<CR>")
+vim.keymap.set("n", "<leader>5", "<Cmd>BufferGoto 5<CR>")
+
 -- Insert Mode
 -- Auto close
 vim.keymap.set("i", '"', '""<Left>')
@@ -67,4 +73,3 @@ vim.keymap.set("i", "{", "{}<Left>")
 -- Visual mode mappings to move lines up and down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
-
