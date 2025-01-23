@@ -28,3 +28,9 @@ vim.api.nvim_create_autocmd("BufEnter", {
 })
 
 vim.cmd("autocmd BufNewFile,BufRead *.ejs set filetype=html")
+vim.cmd("autocmd BufNewFile,BufRead *.ejs set filetype=ejs.html")
+
+vim.filetype.add({ extension = { ejs = "ejs" } })
+vim.treesitter.language.register("html", "ejs")
+vim.treesitter.language.register("javascript", "ejs")
+vim.treesitter.language.register("embedded_template", "ejs")
