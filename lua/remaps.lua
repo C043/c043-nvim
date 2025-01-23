@@ -11,8 +11,20 @@ vim.keymap.set("n", "j", "jzz")
 vim.keymap.set("n", "k", "kzz")
 vim.keymap.set("n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>")
 vim.keymap.set("n", "<leader>sa", "<cmd>write<CR>", { desc = "[S][a]ve the current file" })
-vim.keymap.set("n", "<leader>cd", "<cmd>Copilot disable<CR>", { desc = "Disable Copilot" })
-vim.keymap.set("n", "<leader>ce", "<cmd>Copilot enable<CR>", { desc = "Enable Copilot" })
+-- vim.keymap.set("n", "<leader>cd", "<cmd>Copilot disable<CR>", { desc = "Disable Copilot" })
+-- vim.keymap.set("n", "<leader>ce", "<cmd>Copilot enable<CR>", { desc = "Enable Copilot" })
+
+local copilot_on = true
+vim.keymap.set("n", "<leader>ct", function()
+	if copilot_on then
+		vim.cmd("Copilot disable")
+		print("Copilot OFF")
+	else
+		vim.cmd("Copilot enable")
+		print("Copilot ON")
+	end
+	copilot_on = not copilot_on
+end, { desc = "Toggle Copilot" })
 
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
