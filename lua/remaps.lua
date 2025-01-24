@@ -75,14 +75,6 @@ vim.keymap.set("n", "<leader>7", "<Cmd>BufferGoto 7<CR>")
 vim.keymap.set("n", "<leader>8", "<Cmd>BufferGoto 8<CR>")
 vim.keymap.set("n", "<leader>9", "<Cmd>BufferGoto 9<CR>")
 
--- Insert Mode
--- Auto close
-vim.keymap.set("i", '"', '""<Left>')
--- vim.keymap.set("i", "'", "''<Left>")
-vim.keymap.set("i", "(", "()<Left>")
-vim.keymap.set("i", "[", "[]<Left>")
-vim.keymap.set("i", "{", "{}<Left>")
-
 -- Visual Mode
 -- Visual mode mappings to move lines up and down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
