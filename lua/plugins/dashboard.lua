@@ -1,6 +1,6 @@
 return {
 	{
-		"nvimdev/dashboard-nvim",
+		"c043/dashboard-nvim",
 		event = "VimEnter",
 		config = function()
 			require("dashboard").setup({
