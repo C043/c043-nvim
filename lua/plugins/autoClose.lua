@@ -1,5 +1,5 @@
 return {
 	{
-		"m4xshen/autoclose.nvim",
+		"c043/autoclose.nvim",
 	},
 }
