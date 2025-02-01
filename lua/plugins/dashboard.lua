@@ -9,6 +9,7 @@ return {
 					week_header = {
 						enable = true,
 					},
+					disable_move = true,
 					shortcut = {
 						{ desc = "󰚰 Update", group = "@property", action = "Lazy update", key = "u" },
 						{ desc = " Plugins", group = "@property", action = "Lazy", key = "p" },
