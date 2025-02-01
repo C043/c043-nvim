@@ -6,6 +6,9 @@ return {
 			require("dashboard").setup({
 				theme = "hyper",
 				config = {
+					week_header = {
+						enable = true,
+					},
 					shortcut = {
 						{ desc = "󰚰 Update", group = "@property", action = "Lazy update", key = "u" },
 						{ desc = " Plugins", group = "@property", action = "Lazy", key = "p" },

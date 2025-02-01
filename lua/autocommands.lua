@@ -8,7 +8,7 @@ local utils = require("utils")
 vim.api.nvim_create_autocmd("VimEnter", {
 	callback = function()
 		vim.cmd("Copilot disable")
-		print("Welcome to NeoVim, C043!")
+		print("Welcome back, C043!")
 	end,
 })
 
