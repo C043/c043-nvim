@@ -13,6 +13,9 @@ return {
 			-- animation = true,
 			-- insert_at_start = true,
 			-- …etc.
+			icons = {
+				buffer_index = true,
+			},
 		},
 	},
 }
