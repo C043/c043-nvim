@@ -38,6 +38,37 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 -- Diagnostic keymaps
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
+vim.keymap.set("n", "<leader>home", "<cmd>Dashboard<CR>", { desc = "Open DashBoard" })
+
+-- Debugger keymaps
+vim.keymap.set("n", "<F5>", function()
+	require("dap").continue()
+end)
+vim.keymap.set("n", "<F10>", function()
+	require("dap").step_over()
+end)
+vim.keymap.set("n", "<F11>", function()
+	require("dap").step_into()
+end)
+vim.keymap.set("n", "<F12>", function()
+	require("dap").step_out()
+end)
+vim.keymap.set("n", "<Leader>b", function()
+	require("dap").toggle_breakpoint()
+end)
+vim.keymap.set("n", "<Leader>B", function()
+	require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "))
+end)
+vim.keymap.set("n", "<Leader>dr", function()
+	require("dap").repl.open()
+end)
+vim.keymap.set("n", "<Leader>dh", function()
+	require("dap.ui.widgets").hover()
+end)
+vim.keymap.set("n", "<Leader>dl", function()
+	require("dap").run_last()
+end)
+
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
