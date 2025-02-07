@@ -216,6 +216,11 @@ return {
 				"emmet-language-server",
 				"arduino_language_server",
 				"clangd",
+				"prettier",
+				"prettierd",
+				"google-java-format",
+				"clang-format",
+				"js-debug-adapter",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
