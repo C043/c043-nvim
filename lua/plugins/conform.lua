@@ -38,7 +38,9 @@ return {
 				--
 				-- You can use 'stop_after_first' to run the first available formatter from the list
 				javascript = { "prettier", "prettierd", stop_after_first = true },
+				java = { "google-java-format" },
 				ejs = { "prettier" },
+				-- NOTE
 				-- Add this in the root file for ejs projects:
 				-- {
 				--   "overrides": [
