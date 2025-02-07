@@ -1,4 +1,5 @@
 local dap = require("dap")
+
 dap.adapters["pwa-node"] = {
 	type = "server",
 	host = "localhost",
