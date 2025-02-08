@@ -1,3 +1,4 @@
+local cmp_nvim_lsp = require("cmp_nvim_lsp")
 return {
 	{
 		-- Main LSP Configuration
@@ -14,6 +15,13 @@ return {
 
 			-- Allows extra capabilities provided by nvim-cmp
 			"hrsh7th/cmp-nvim-lsp",
+		},
+		opts = {
+			setup = {
+				clangd = function(_, opts)
+					opts.capabilities.offsetEncoding = { "utf-16" }
+				end,
+			},
 		},
 		config = function()
 			-- Brief aside: **What is LSP?**
@@ -219,7 +227,6 @@ return {
 				"prettier",
 				"prettierd",
 				"google-java-format",
-				"clang-format",
 				"js-debug-adapter",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
@@ -242,6 +249,14 @@ return {
 						})
 
 						require("lspconfig").jdtls.setup({})
+						-- clangd fix
+						require("lspconfig").clangd.setup({
+							capabilities = cmp_nvim_lsp.default_capabilities(),
+							cmd = {
+								"clangd",
+								"--offset-encoding=utf-16",
+							},
+						})
 					end,
 				},
 			})
