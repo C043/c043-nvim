@@ -41,7 +41,7 @@ return {
 				java = { "google-java-format" },
 				ejs = { "prettier" },
 				-- NOTE
-				-- Add this in the root file for ejs projects in a .prettier
+				-- Add this in the root file for ejs projects in a .prettierrc
 				-- file:
 				-- {
 				--   "overrides": [
