@@ -10,6 +10,8 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "j", "jzz")
 vim.keymap.set("n", "k", "kzz")
+vim.keymap.set("n", "o", "zzo")
+vim.keymap.set("n", "O", "zzO")
 vim.keymap.set("n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>")
 vim.keymap.set("n", "<leader>sa", "<cmd>write<CR>", { desc = "[S][a]ve the current file" })
 
