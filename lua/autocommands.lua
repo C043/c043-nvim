@@ -35,6 +35,16 @@ vim.api.nvim_create_autocmd("BufEnter", {
 		if filetype == "java" then
 			vim.keymap.set("n", "<leader>rr", "<cmd>JavaRunnerRunMain<CR>", { desc = "Run Java Runner" })
 		end
+
+		if filetype == "cpp" then
+			vim.keymap.set(
+				"n",
+				"<leader>rr",
+				"<cmd>Piorun<CR>",
+				{ desc = "Uploads the arduino sketch on the arduino board" }
+			)
+			vim.keymap.set("n", "<leader>rb", "<cmd>Piorun build<CR>", { desc = " Tests the arduino sketch" })
+		end
 	end,
 })
 
