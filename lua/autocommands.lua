@@ -45,6 +45,10 @@ vim.api.nvim_create_autocmd("BufEnter", {
 			)
 			vim.keymap.set("n", "<leader>rb", "<cmd>Piorun build<CR>", { desc = " Tests the arduino sketch" })
 		end
+
+		if filetype == "openscad" then
+			vim.keymap.set("n", "<leader>f", "magg=G'a", { desc = "Format all openscad file" })
+		end
 	end,
 })
 
