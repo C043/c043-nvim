@@ -47,7 +47,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
 		end
 
 		if filetype == "openscad" then
-			vim.keymap.set("n", "<leader>f", "magg=G'a", { desc = "Format all openscad file" })
+			vim.keymap.set("n", "<leader>ff", "magg=G'azz", { desc = "Format all openscad file" })
 		end
 	end,
 })
