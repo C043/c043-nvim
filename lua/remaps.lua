@@ -15,6 +15,13 @@ vim.keymap.set("n", "O", "zzO")
 vim.keymap.set("n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>")
 vim.keymap.set("n", "<leader>sa", "<cmd>write<CR>", { desc = "[S][a]ve the current file" })
 
+vim.keymap.set(
+	"n",
+	"<leader>fr",
+	"<cmd>FunctionReference<CR>",
+	{ desc = "Show the call stack of a certain method or function" }
+)
+
 local copilot_on = false
 vim.keymap.set("n", "<leader>ct", function()
 	if copilot_on then
