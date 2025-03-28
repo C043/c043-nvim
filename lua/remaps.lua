@@ -13,7 +13,7 @@ vim.keymap.set("n", "k", "kzz")
 vim.keymap.set("n", "o", "zzo")
 vim.keymap.set("n", "O", "zzO")
 vim.keymap.set("n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>")
-vim.keymap.set("n", "<leader>sa", "<cmd>write<CR>", { desc = "[S][a]ve the current file" })
+vim.keymap.set("n", "<leader>ss", "<cmd>write<CR>", { desc = "[S][a]ve the current file" })
 
 vim.keymap.set(
 	"n",
