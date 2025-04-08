@@ -24,6 +24,16 @@ return {
 			},
 		},
 		config = function()
+			vim.diagnostic.config({
+				virtual_text = {
+					prefix = "●",
+					spacing = 4,
+				},
+				signs = true,
+				underline = true,
+				update_in_insert = false,
+				severity_sort = true,
+			})
 			-- Brief aside: **What is LSP?**
 			--
 			-- LSP is an initialism you've probably heard, but might not understand what it is.
