@@ -34,6 +34,25 @@ vim.keymap.set("n", "<leader>ct", function()
 	copilot_on = not copilot_on
 end, { desc = "Toggle Copilot" })
 
+local spell_check_on = false
+vim.keymap.set("n", "<leader>sl", function()
+	if spell_check_on then
+		vim.cmd("set nospell")
+		spell_check_on = false
+		print("Spell check OFF")
+	else
+		local lang = vim.fn.input("Choose language (it/en): ")
+		if lang == "it" or lang == "en" then
+			vim.cmd("set spell")
+			vim.cmd("set spelllang=" .. lang)
+			spell_check_on = true
+			print("Spell check " .. lang .. " ON")
+		else
+			print("Unsupported language: " .. lang)
+		end
+	end
+end, { desc = "Toggle italian spell checker" })
+
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 vim.keymap.set("n", "<leader>w", "gqap", { desc = "Format Paragraph" })
 
