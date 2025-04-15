@@ -53,6 +53,13 @@ vim.api.nvim_create_autocmd("BufEnter", {
 	end,
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "ejs",
+	callback = function()
+		vim.opt_local.indentexpr = ""
+	end,
+})
+
 -- vim.cmd("autocmd BufNewFile,BufRead *.ejs set filetype=html")
 -- vim.cmd("autocmd BufNewFile,BufRead *.ejs set filetype=ejs.html")
 
