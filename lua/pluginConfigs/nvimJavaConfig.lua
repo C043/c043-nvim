@@ -1,3 +1,5 @@
+require("java").setup({})
+
 local home = os.getenv("HOME")
 local os_name = vim.loop.os_uname().sysname
 local config_platform
