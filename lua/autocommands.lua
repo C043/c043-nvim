@@ -32,6 +32,12 @@ vim.api.nvim_create_autocmd("BufEnter", {
 			end, { desc = "Execute the current buffer script" })
 		end
 
+		if filetype == "lua" then
+			vim.keymap.set("n", "<leader>rr", function()
+				utils.TerminalOut("lua " .. fileName)
+			end, { desc = "Execute the current buffer script" })
+		end
+
 		if filetype == "java" then
 			vim.keymap.set("n", "<leader>rr", "<cmd>JavaRunnerRunMain<CR>", { desc = "Run Java Runner" })
 		end
