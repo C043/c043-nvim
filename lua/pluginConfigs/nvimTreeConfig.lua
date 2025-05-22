@@ -8,6 +8,6 @@ require("nvim-tree").setup({
 		timeout = 500,
 	},
 	view = {
-		width = 10,
+		width = 30,
 	},
 })
