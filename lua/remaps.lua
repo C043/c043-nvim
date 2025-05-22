@@ -53,6 +53,8 @@ vim.keymap.set("n", "<leader>sl", function()
 	end
 end, { desc = "Toggle italian spell checker" })
 
+vim.keymap.set("n", "<leader>sc", "<cmd>Scratch<CR>", { desc = "Open a temporary buffer to take temprary notes" })
+
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 vim.keymap.set("n", "<leader>w", "gqap", { desc = "Format Paragraph" })
 

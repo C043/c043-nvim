@@ -1,5 +1,6 @@
 require("before")
 require("remaps")
+require("customCommands")
 require("autocommands")
 require("lazyPackageManager")
 
