@@ -38,6 +38,7 @@ local checkbox = {
 
 	make_checkbox = function(line)
 		if line:match("^%s*$") then
+			vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", true)
 			return "- [ ] "
 		end
 	end,
@@ -46,7 +47,7 @@ local checkbox = {
 local M = {}
 
 M.toggle = function()
-	local bufnr = vim.api.nvim_buf_get_number(0)
+	local bufnr = vim.api.nvim_get_current_buf()
 	local cursor = vim.api.nvim_win_get_cursor(0)
 	local start_line = cursor[1] - 1
 	local current_line = vim.api.nvim_buf_get_lines(bufnr, start_line, start_line + 1, false)[1] or ""
