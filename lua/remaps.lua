@@ -15,6 +15,8 @@ vim.keymap.set("n", "O", "zzO")
 vim.keymap.set("n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>")
 vim.keymap.set("n", "<leader>ss", "<cmd>write<CR>", { desc = "[S][a]ve the current file" })
 
+vim.keymap.set("n", "<A-l>", "<cmd>ToggleCheckbox<CR>")
+
 vim.keymap.set(
 	"n",
 	"<leader>fr",
