@@ -1,3 +1,4 @@
+-- Scratch buffer creation custom command
 vim.api.nvim_create_user_command("Scratch", function()
 	vim.cmd("enew")
 	vim.bo.buftype = "nofile"
@@ -6,8 +7,8 @@ vim.api.nvim_create_user_command("Scratch", function()
 	vim.bo.filetype = "markdown"
 end, {})
 
+-- Toggle Checkbox custom command
 local checked_character = "x"
-
 local checked_checkbox = "%[" .. checked_character .. "%]"
 local unchecked_checkbox = "%[ %]"
 
@@ -70,5 +71,3 @@ M.toggle = function()
 end
 
 vim.api.nvim_create_user_command("ToggleCheckbox", M.toggle, {})
-
-return M
