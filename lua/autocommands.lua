@@ -8,7 +8,8 @@ local utils = require("utils")
 vim.api.nvim_create_autocmd("VimEnter", {
 	callback = function()
 		vim.cmd("Copilot disable")
-		print("Welcome back, C043!")
+		local user = os.getenv("USER") or os.getenv("USERNAME")
+		print("Welcome back, " .. user .. "!")
 	end,
 })
 
