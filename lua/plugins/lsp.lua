@@ -259,6 +259,7 @@ return {
 						})
 
 						require("lspconfig").jdtls.setup({})
+
 						-- clangd fix
 						require("lspconfig").clangd.setup({
 							capabilities = cmp_nvim_lsp.default_capabilities(),

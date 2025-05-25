@@ -26,6 +26,10 @@ vim.opt.expandtab = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+vim.opt.cindent = false
+
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = "a"
 
