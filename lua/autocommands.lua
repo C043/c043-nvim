@@ -21,6 +21,26 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
+vim.api.nvim_create_autocmd("BufWinLeave", {
+	callback = function()
+		-- Schedule to run after the buffer fully loads
+		vim.schedule(function()
+			-- Check if we're in an empty [No Name] buffer and no listed buffers remain
+			local bufname = vim.api.nvim_buf_get_name(0)
+			local buftype = vim.bo.buftype
+
+			local listed = vim.tbl_filter(function(buf)
+				return vim.fn.buflisted(buf) == 1
+			end, vim.api.nvim_list_bufs())
+
+			-- Conditions: No buffers left, current is empty and not a special terminal/etc
+			if #listed == 1 and bufname == "" and buftype == "" then
+				vim.cmd("Dashboard")
+			end
+		end)
+	end,
+})
+
 -- NOTE Running files inside NeoVim autocommand
 vim.api.nvim_create_autocmd("BufEnter", {
 	pattern = "*",
