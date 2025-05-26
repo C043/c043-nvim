@@ -5,19 +5,19 @@ local utils = require("utils")
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
 --  See `:help vim.highlight.on_yank()`
-vim.api.nvim_create_autocmd("VimEnter", {
-	callback = function()
-		vim.cmd("Copilot disable")
-		local user = os.getenv("USER") or os.getenv("USERNAME")
-		print("Welcome back, " .. user .. "!")
-	end,
-})
-
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
 	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
 	callback = function()
 		vim.highlight.on_yank()
+	end,
+})
+
+vim.api.nvim_create_autocmd("VimEnter", {
+	callback = function()
+		vim.cmd("Copilot disable")
+		local user = os.getenv("USER") or os.getenv("USERNAME")
+		print("Welcome back, " .. user .. "!")
 	end,
 })
 
