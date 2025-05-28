@@ -7,47 +7,49 @@ vim.api.nvim_create_user_command("Scratch", function()
 	vim.bo.filetype = "markdown"
 end, {})
 
--- Toggle Checkbox custom command
-local checked_character = "x"
-local checked_checkbox = "%[" .. checked_character .. "%]"
-local unchecked_checkbox = "%[ %]"
+vim.api.nvim_create_user_command("ToggleCheckbox", function()
+	-- Toggle Checkbox custom command
+	local checked_character = "x"
+	local checked_checkbox = "%[" .. checked_character .. "%]"
+	local unchecked_checkbox = "%[ %]"
 
-local line_contains_unchecked = function(line)
-	return line:find(unchecked_checkbox)
-end
+	local line_contains_unchecked = function(line)
+		return line:find(unchecked_checkbox)
+	end
 
-local line_contains_checked = function(line)
-	return line:find(checked_checkbox)
-end
+	local line_contains_checked = function(line)
+		return line:find(checked_checkbox)
+	end
 
-local line_with_checkbox = function(line)
-	-- return not line_contains_a_checked_checkbox(line) and not line_contains_an_unchecked_checkbox(line)
-	return line:find("^%s*- " .. checked_checkbox)
-		or line:find("^%s*- " .. unchecked_checkbox)
-		or line:find("^%s*%d%. " .. checked_checkbox)
-		or line:find("^%s*%d%. " .. unchecked_checkbox)
-end
+	local line_with_checkbox = function(line)
+		-- return not line_contains_a_checked_checkbox(line) and not line_contains_an_unchecked_checkbox(line)
+		return line:find("^%s*- " .. checked_checkbox)
+			or line:find("^%s*- " .. unchecked_checkbox)
+			or line:find("^%s*%d%. " .. checked_checkbox)
+			or line:find("^%s*%d%. " .. unchecked_checkbox)
+	end
 
-local checkbox = {
-	check = function(line)
-		return line:gsub(unchecked_checkbox, checked_checkbox, 1)
-	end,
+	local get_indent = function(line)
+		return line:match("^(%s*)") or ""
+	end
 
-	uncheck = function(line)
-		return line:gsub(checked_checkbox, unchecked_checkbox, 1)
-	end,
+	local checkbox = {
+		check = function(line)
+			return line:gsub(unchecked_checkbox, checked_checkbox, 1)
+		end,
 
-	make_checkbox = function(line)
-		if line:match("^%s*$") then
-			vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", true)
-			return "- [ ] "
-		end
-	end,
-}
+		uncheck = function(line)
+			return line:gsub(checked_checkbox, unchecked_checkbox, 1)
+		end,
 
-local M = {}
-
-M.toggle = function()
+		make_checkbox = function(line)
+			local indent = get_indent(line)
+			if line:match("^%s*$") then
+				vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", true)
+				return indent .. "- [ ] "
+			end
+		end,
+	}
 	local bufnr = vim.api.nvim_get_current_buf()
 	local cursor = vim.api.nvim_win_get_cursor(0)
 	local start_line = cursor[1] - 1
@@ -68,6 +70,4 @@ M.toggle = function()
 
 	vim.api.nvim_buf_set_lines(bufnr, start_line, start_line + 1, false, { new_line })
 	vim.api.nvim_win_set_cursor(0, cursor)
-end
-
-vim.api.nvim_create_user_command("ToggleCheckbox", M.toggle, {})
+end, {})
